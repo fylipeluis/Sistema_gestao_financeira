@@ -1,9 +1,15 @@
 
 # FacilitSoluções Financeiras
+<<<<<<< HEAD
 
 Sistema de gestão financeira para operação de empréstimos, com controle de clientes, contratos, parcelas, cobranças por mensagens via whatsapp e pagamentos via Pix — incluindo geração automática de cobrança, acompanhamento de status e um painel administrativo com visão consolidada da operação.
 
 > ⚠️ **Projeto em desenvolvimento.** Algumas seções do painel administrativo ainda estão em construção (ver [Roadmap](#roadmap--melhorias-planejadas)). Este README será atualizado conforme o sistema evolui.
+=======
+Projeto privado/desenvolvido sob demanda
+
+Sistema de gestão financeiras para operação de empréstimos, com controle de clientes, contratos, parcelas, cobranças por mensagens via whatsapp e pagamentos via Pix — incluindo geração automática de cobrança, acompanhamento de status e um painel administrativo com visão consolidada da operação.
+>>>>>>> c5e9dd22c78a42e225fd38bea21a7428ba4de661
 
 ---
 
