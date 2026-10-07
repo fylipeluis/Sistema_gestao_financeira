@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+dist/
+
+# Ambiente — NUNCA commitar isso
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Executáveis
+*.exe
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo

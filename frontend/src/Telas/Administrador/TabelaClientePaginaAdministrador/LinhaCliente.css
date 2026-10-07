@@ -1,0 +1,44 @@
+.status-ativo {
+  background-color: #dcfce7;
+  color: #166534;
+    padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-inativo {
+  background-color: #fee2e2;
+  color: #991b1b;
+padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-pendente {
+  background-color: #fef3c7;
+  color: #e69824;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-pago {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-cancelado {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}

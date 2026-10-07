@@ -1,0 +1,743 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================
+   VARIÁVEIS
+============================ */
+
+.cliente-page {
+  --bg: #0a0a0a;
+  --panel: #121212;
+  --panel-border: #262019;
+  --yellow: #f4c10f;
+  --yellow-dim: #3a2f06;
+  --yellow-glow: rgba(244, 193, 15, 0.18);
+  --white: #f7f5ef;
+  --muted: #8f8b7f;
+  --danger: #ff6b5e;
+  --danger-bg: #2a1512;
+
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ============================
+   HEADER
+============================ */
+
+.cliente-header {
+  background: var(--panel);
+  border-bottom: 2px solid var(--yellow);
+  color: var(--white);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cliente-header .header-content {
+  flex: 1;
+}
+
+.cliente-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px 0;
+  color: var(--white);
+}
+
+.header-desc {
+  font-size: 14px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.btn-sair {
+  padding: 10px 24px;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--panel-border);
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-sair:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.cliente-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ============================
+   PADRÃO DE SEÇÃO (compartilhado)
+============================ */
+
+.dados-cliente-section,
+.resumo-section,
+.parcelas-section {
+  background: var(--panel);
+  padding: 30px;
+  border-radius: 4px;
+  border: 1px solid var(--panel-border);
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px 0;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============================
+   DADOS DO CLIENTE
+============================ */
+
+.dados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dado-item {
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 2px;
+  border: 1px solid var(--panel-border);
+}
+
+.dado-item label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.dado-valor {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+.dado-valor.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.dado-valor.status.status-ativo {
+  background: var(--yellow-dim);
+  color: var(--yellow);
+  border-color: rgba(244, 193, 15, 0.3);
+}
+
+.dado-valor.status.status-inativo {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: rgba(255, 107, 94, 0.3);
+}
+
+.dado-valor.status.status-pendente {
+  background: rgba(143, 139, 127, 0.12);
+  color: var(--muted);
+  border-color: rgba(143, 139, 127, 0.25);
+}
+
+/* ============================
+   RESUMO
+============================ */
+
+.resumo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.resumo-card {
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 2px;
+  border: 1px solid var(--panel-border);
+  text-align: center;
+}
+
+.resumo-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.resumo-valor {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--yellow);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================
+   PARCELAS
+============================ */
+
+.parcelas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.fatura-bloco {
+  border: 1px solid var(--panel-border);
+  border-radius: 2px;
+  padding: 20px;
+  background: var(--bg);
+}
+
+.fatura-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.fatura-header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px 0;
+}
+
+.fatura-info {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabela-parcelas {
+  overflow-x: auto;
+}
+
+.tabela-parcelas table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-parcelas thead {
+  background-color: var(--panel);
+}
+
+.tabela-parcelas th {
+  padding: 14px 12px;
+  text-align: left;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.tabela-parcelas td {
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #e5e5e0;
+  border-bottom: 1px solid var(--panel-border);
+  background: var(--panel);
+}
+
+.tabela-parcelas tbody tr:hover td {
+  background-color: #1a1a1a;
+  transition: background-color 0.15s;
+}
+
+.parcela-numero {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--yellow);
+}
+
+.parcela-valor {
+  font-weight: 600;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================
+   STATUS BADGE
+============================ */
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.3px;
+}
+
+.status-badge.status-pago {
+  background: var(--yellow-dim);
+  color: var(--yellow);
+  border-color: rgba(244, 193, 15, 0.3);
+}
+
+.status-badge.status-adiantado {
+  background: rgba(247, 245, 239, 0.08);
+  color: var(--white);
+  border-color: rgba(247, 245, 239, 0.18);
+}
+
+.status-badge.status-atrasado {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: rgba(255, 107, 94, 0.3);
+}
+
+.status-badge.status-pendente {
+  background: rgba(143, 139, 127, 0.12);
+  color: var(--muted);
+  border-color: rgba(143, 139, 127, 0.25);
+}
+
+/* ============================
+   BOTÃO PAGAR
+============================ */
+
+.btn-pagar {
+  padding: 8px 16px;
+  background: var(--yellow);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.btn-pagar:hover:not(:disabled) {
+  background: #ffd54f;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px -4px var(--yellow-glow);
+}
+
+.btn-pagar:disabled {
+  background: rgba(143, 139, 127, 0.15);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* ============================
+   SEM PARCELAS
+============================ */
+
+.sem-parcelas {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--bg);
+  border-radius: 2px;
+  border: 1px dashed var(--panel-border);
+}
+
+.sem-parcelas p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ============================
+   ERRO
+============================ */
+
+.erro-mensagem {
+  padding: 16px;
+  background: var(--danger-bg);
+  border-left: 3px solid var(--danger);
+  border-radius: 2px;
+  color: var(--danger);
+  font-size: 14px;
+}
+
+/* ============================
+   MODAL DE PAGAMENTO
+============================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-pagamento {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  padding: 40px;
+  border-radius: 4px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 40px 90px -24px rgba(0, 0, 0, 0.8);
+  animation: slideUp 0.25s ease;
+}
+
+.modal-pagamento::before,
+.modal-pagamento::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+.modal-pagamento::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--yellow);
+  border-left: 2px solid var(--yellow);
+}
+
+.modal-pagamento::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--yellow);
+  border-right: 2px solid var(--yellow);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-fechar:hover {
+  color: var(--white);
+}
+
+.modal-pagamento h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 8px 0;
+}
+
+.modal-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 20px 0;
+}
+
+.valor-display {
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  border-top: 2px solid var(--yellow);
+  color: var(--white);
+  padding: 25px;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.valor-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.valor-grande {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--yellow);
+  font-variant-numeric: tabular-nums;
+}
+
+.metodos-pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.metodo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--panel-border);
+  border-radius: 2px;
+  cursor: pointer;
+  background: var(--bg);
+  transition: all 0.15s;
+}
+
+.metodo-item input[type="radio"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--yellow);
+}
+
+.metodo-item:has(input[type="radio"]:checked) {
+  border-color: var(--yellow);
+  background: var(--yellow-dim);
+}
+
+.metodo-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metodo-label strong {
+  font-size: 14px;
+  color: var(--white);
+}
+
+.metodo-label small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  flex-direction: column-reverse;
+}
+
+.btn-pagar-agora {
+  padding: 12px 24px;
+  background: var(--yellow);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-pagar-agora:hover {
+  background: #ffd54f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px var(--yellow-glow);
+}
+
+.btn-cancelar-modal {
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--panel-border);
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancelar-modal:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.qrcode-container {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.qrcode-imagem {
+  width: 200px;
+  height: 200px;
+  border-radius: 2px;
+  border: 1px solid var(--panel-border);
+  background: var(--white);
+  padding: 8px;
+}
+
+.pix-copia-cola {
+  margin: 16px 0;
+}
+
+.pix-copia-cola label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pix-code-box {
+  display: flex;
+  gap: 8px;
+}
+
+.pix-code-box input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--bg);
+}
+
+.btn-copiar {
+  background-color: var(--yellow);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-copiar:hover {
+  background-color: #ffd54f;
+}
+
+.pix-instrucao {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.pix-status {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px 0;
+}
+
+.pix-erro {
+  text-align: center;
+  color: var(--danger);
+  padding: 16px 0;
+}
+
+.btn-tentar-novamente {
+  margin-top: 8px;
+  background-color: var(--danger);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ============================
+   RESPONSIVO
+============================ */
+
+@media (max-width: 768px) {
+  .cliente-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .cliente-header h1 {
+    font-size: 22px;
+  }
+
+  .cliente-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .dados-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resumo-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .tabela-parcelas table {
+    font-size: 12px;
+  }
+
+  .tabela-parcelas th,
+  .tabela-parcelas td {
+    padding: 10px 8px;
+  }
+
+  .modal-pagamento {
+    padding: 25px;
+  }
+}

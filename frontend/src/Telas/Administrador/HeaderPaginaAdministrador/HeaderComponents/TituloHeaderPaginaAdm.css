@@ -1,0 +1,27 @@
+.title-header {
+  display: flex;
+
+
+  gap: 20px;
+  flex: 1;
+}
+
+.title-header h1 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  position: static;
+  transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title-header h1 span {
+  color: #f6d000;
+  font-size: 32px;
+  font-weight: 700;
+  position: static;
+  transform: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

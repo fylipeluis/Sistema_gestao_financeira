@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px; /* Espaçamento interno lateral */
+  margin-bottom: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}

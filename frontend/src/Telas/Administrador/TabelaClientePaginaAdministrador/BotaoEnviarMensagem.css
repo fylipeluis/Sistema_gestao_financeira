@@ -1,0 +1,22 @@
+/* ============================
+  BOTÃO GATILHO
+============================ */
+
+.mensagem-botao-gatilho {
+  padding: 12px 12px;
+  background: #ff5252;
+  color: #f7f5ef;
+  border: 1px solid #262019;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.2s;
+  margin-right: 35px;
+}
+
+.mensagem-botao-gatilho:hover {
+  border-color: #f7f5ef;
+  color: #f7f5ef;
+}
